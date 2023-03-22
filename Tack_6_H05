@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cmath>
+#include <locale>
+using namespace std;
+
+float usain_run(float V, int N) {
+    float speed = V;
+    float time = 0;
+    for (int i = 1; i <= N; i++) {
+        time += 500 / speed;
+        speed *= 0.95;
+    }
+    cout << "Total time: " << time << " seconds" << endl;
+    return speed;
+}
+
+int main() {
+setlocale(LC_ALL,"Russian");
+ float speed = 40.0 / 3.6; // Перевод в метры в секунду
+    int N ;
+    cin >> N;
+    cout << "Начальная скорость " << speed << " м/с" << endl;
+    cout << "Результат " << N << " кругов:" << endl;
+    cout << "Скорость: " << usain_run(speed, N) << " м/с" << endl << endl;
+
+    int v = 40.0; // начальная скорость
+    int distance = 500.0; // длина круга
+    int laps = 0; // количество пройденных кругов
+    int sum = 0;
+    while (v > 1) {
+        if (v == 1)
+      break; // выход из цикла while
+        laps++; // увеличиваем количество кругов на 1
+        v *= 0.95; // уменьшаем скорость на 5%
+        double time = distance / (v / 3.6); // вычисляем время прохождения круга в секундах
+        time++;
+        sum+=time ;
+        cout << "Круг " << laps << ", скорость " << v << " км/ч, время " << time << " секунд" << endl;
+        cout << "Время " << sum << '\n';
+
+    }
+
+        int time_1 =7055; // время прошлого забега
+    int v1 = 35.0; // начальная скорость
+
+    int laps1 = 0; // количество пройденных кругов
+        laps++; // увеличиваем количество кругов на 1
+        int time_2 = distance / (v1 / 3.6); // вычисляем время прохождения круга в секундах
+        int N1 = time_1 / time_2 ;
+        time_1++;
+
+ cout << "Пробежит кругов за то же время если скорость 35 км/ч " << N1 << '\n';
+
+
+    return 0;
+}
