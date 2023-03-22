@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    double real;
+    double imag;
+
+public:
+    Complex(double r = 0, double i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    Complex operator + (Complex const &obj) {
+        Complex res;
+        res.real = real + obj.real;
+        res.imag = imag + obj.imag;
+        return res;
+    }
+
+    Complex operator - (Complex const &obj) {
+        Complex res;
+        res.real = real - obj.real;
+        res.imag = imag - obj.imag;
+        return res;
+    }
+
+    Complex operator * (Complex const &obj) {
+        Complex res;
+        res.real = real * obj.real - imag * obj.imag;
+        res.imag = real * obj.imag + imag * obj.real;
+        return res;
+    }
+
+    Complex operator / (Complex const &obj) {
+        Complex res;
+        double denominator = obj.real * obj.real + obj.imag * obj.imag;
+        res.real = (real * obj.real + imag * obj.imag) / denominator;
+        res.imag = (imag * obj.real - real * obj.imag) / denominator;
+        return res;
+    }
+
+    void print() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex a(4, 5);
+    Complex b(2, 3);
+
+    Complex c = a + b;
+    c.print();
+
+    Complex d = a - b;
+    d.print();
+
+    Complex e = a * b;
+    e.print();
+
+    Complex f = a / b;
+    f.print();
+
+    return 0;
+}
