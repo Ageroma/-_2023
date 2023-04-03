@@ -17,7 +17,8 @@ float usain_run(float V, int N) {
 int main() {
     setlocale(LC_ALL,"Russian");
     float V = 40.0/3.6;
-    int N = 10;
+    int N ;
+    cin >> N ;
     for (int i = 1; i <= N; i++) {
         float speed = usain_run(V, i);
         cout <<"Круг: "<< i << "\t" << "Скорость: " << speed <<" м/с"<< endl;
@@ -56,8 +57,6 @@ int main() {
         time1++;
         sum1+=time1 ;
         cout << "Круг " << laps1 << ", скорость " << v1 << " м/c "   << "\t";
-
-
     }
     return 0;
 }
