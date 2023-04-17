@@ -1,0 +1,18 @@
+#include <iostream>
+#include <fstream>
+#include <locale>
+using namespace std;
+int main() {
+    setlocale(LC_ALL,"Russian");
+    int a, b;
+    cout << "Введите два числа A и B (B > A): ";
+    cin >> a >> b;
+
+    ofstream output("output.txt"); // открываем
+
+    for (int i = a; i <= b; i++) {
+        output << i * 3 << endl; // записываем в файл значение каждого числа, умноженного на 3
+    }
+    output.close(); // закрываем файл
+    cout << "Вроде выводит в фаил" << endl;
+    return 0;
