@@ -1,0 +1,13 @@
+#include <iostream>
+#include <fstream>
+#include <locale>
+using namespace std;
+int main() {
+    setlocale(LC_ALL,"Russian");
+    int n=1, out=0;
+    ifstream reading("output.txt");
+    while (reading >> out){
+        cout << n++ << ")  " << out << '\n';
+    }
+    return 0;
+}
