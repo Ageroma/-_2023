@@ -6,7 +6,7 @@ double get_angel(double a ,double b, double c)
     {
         if (a<=0 || b<=0 ||c<=0)
             {
-            cerr << "Ошибка введи положительные числа"<<endl;
+            cout << "Ошибка введи положительные числа"<<endl;
             return -1;
             }
 
