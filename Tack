@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+#include <locale>
+using namespace std;
+double get_angel(double a ,double b, double c)
+    {
+        if (a<=0 || b<=0 ||c<=0)
+            {
+            cerr << "Ошибка введи положительные числа"<<endl;
+            return -1;
+            }
+
+        double cos_A=(b*b+c*c-a*a)/(2*b*c);
+        double A=acos(cos_A)*180/M_PI;
+        return A;
+        }
+
+
+int main(){
+setlocale(LC_ALL,"Russian");
+    cout<<get_angel(5 ,4, 3) << endl; //90 градусов
+    cout<<get_angel(-1 ,4, 3) << endl; // отрицательные числа
+        return 0;
+}
