@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+void print(int a) {
+    cout << a << endl;
+}
+
+void print(float a) {
+    cout << a << endl;
+}
+
+void print(char a) {
+    cout << a << endl;
+}
+
+void print(int a, int s) {
+    cout << a << ", " << s << endl;
+}
+
+int main() {
+    int q = 1134;
+    float w = 1.12342344;
+    char e = 'z';
+    int r = 5, t = 7;
+
+    print(q);
+    print(w);
+    print(e);
+    print(r, t);
+
+    return 0;
+}
