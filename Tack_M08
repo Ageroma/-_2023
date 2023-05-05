@@ -2,14 +2,15 @@
 #include <cmath>
 #include <locale>
 using namespace std;
-float get_angel(float a ,float b, float c){
-    if (a<=0 || b<=0 ||c<=0){
-        cout << "Ошибка введи положительные числа"<<endl;
+
+float get_angle(float a ,float b, float c) {
+    if (a <= 0 ||  b <= 0 || c <= 0) {
+        cout << "Ошибка введи положительные числа" << endl;
         return -1;
     }
     else{
-        float cos_A=(b*b+c*c-a*a)/(2*b*c);
-        float A=acos(cos_A)*180/M_PI;
+        float cos_A = (b * b + c * c - a * a)/(2 * b * c);
+        float A = acos(cos_A) * 180 / M_PI;
         return A;
     }
     
@@ -19,8 +20,9 @@ int main(){
     setlocale(LC_ALL,"Russian");
     float a,b,c;
     cin >> a >> b >> c;
-    cout << get_angel(a,b,c) << endl;
-    cout << get_angel(5 ,4, 3) << endl; //90 градусов
-    cout << get_angel(-1 ,4, 3) << endl; // отрицательные числа
+    cout << get_angle(a , b , c) << endl;
+    cout << get_angle(5 ,4 , 3) << endl; //90 градусов
+    cout << get_angle(-1 ,4 , 3) << endl; // отрицательные числа
+    
     return 0;
 }
